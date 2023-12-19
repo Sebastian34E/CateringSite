@@ -1,4 +1,5 @@
 import adapter from "@sveltejs/adapter-static";
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 const dev = process.env.NODE_ENV === 'development';
 
@@ -12,7 +13,9 @@ const config = {
 		paths: {
 			base: dev ? '' : '/CateringSite',
 		},
-	}
+	},
+	preprocess: vitePreprocess()
+
 };
 
 export default config;
